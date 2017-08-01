@@ -37,11 +37,12 @@ brew install wget --with-iri
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+# brew install vim --with-override-system-vi
+brew install neovim
 brew install grep
 brew install openssh
 brew install screen
-brew install homebrew/php/php56 --with-gmp
+brew install homebrew/php/php71 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -91,6 +92,32 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+
+
+# Cask
+brew cask install atom
+brew cask install telegram
+brew cask install iterm2
+brew cask install Transmission
+brew cask install spectacle
+
+# Devtools
+brew cask install sourcetree
+brew cask install slack
+
+brew install composer
+brew cask install docker
+brew cask install sequel-pro
+
+
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install quicklook-csv
+brew cask install betterzipql
+brew cask install qlimagesize
+brew cask install webpquicklook
 
 # Remove outdated versions from the cellar.
 brew cleanup
