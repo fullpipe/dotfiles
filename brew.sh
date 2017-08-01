@@ -42,7 +42,7 @@ brew install neovim
 brew install grep
 brew install openssh
 brew install screen
-brew install homebrew/php/php71 --with-gmp
+brew install homebrew/php/php71
 
 # Install font tools.
 brew tap bramstein/webfonttools
