@@ -106,6 +106,7 @@ brew cask install sourcetree
 brew cask install slack
 
 brew install composer
+brew install gpg2
 brew cask install docker
 brew cask install sequel-pro
 
