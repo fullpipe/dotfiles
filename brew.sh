@@ -43,6 +43,7 @@ brew install grep
 brew install openssh
 brew install screen
 brew install homebrew/php/php71
+brew install homebrew/php/php-cs-fixer
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -97,9 +98,12 @@ brew install zopfli
 # Cask
 brew cask install atom
 brew cask install telegram
+brew cask install whatsapp
 brew cask install iterm2
 brew cask install Transmission
 brew cask install spectacle
+brew cask install skype
+brew cask install gitter
 
 # Devtools
 brew cask install sourcetree
@@ -107,8 +111,12 @@ brew cask install slack
 
 brew install composer
 brew install gpg2
+brew install npm
 brew cask install docker
 brew cask install sequel-pro
+brew cask install imageoptim
+brew cask install filezilla
+brew cask install dash
 
 
 brew cask install qlcolorcode
