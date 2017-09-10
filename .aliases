@@ -162,3 +162,8 @@ alias reload="exec $SHELL -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# use NeoVim if possible
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
