@@ -44,6 +44,8 @@ brew install openssh
 brew install screen
 brew install homebrew/php/php71
 brew install homebrew/php/php-cs-fixer
+brew install python3
+pip3 install neovim
 
 # Install font tools.
 brew tap bramstein/webfonttools
