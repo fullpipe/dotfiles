@@ -46,6 +46,8 @@ brew install homebrew/php/php71
 brew install homebrew/php/php-cs-fixer
 brew install python3
 pip3 install neovim
+brew cask install ngrok
+brew cask install android-file-transfer
 
 # Install font tools.
 brew tap bramstein/webfonttools
