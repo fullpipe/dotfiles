@@ -97,7 +97,8 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
-
+brew install htop
+brew install octave
 
 # Cask
 brew cask install atom
