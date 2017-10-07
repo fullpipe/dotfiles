@@ -25,6 +25,8 @@ Alternatively, to update while avoiding the confirmation prompt:
 ```bash
 set -- -f; source bootstrap.sh
 ```
+### Signing git commits with GPG on macOS for GitHub/GitLab
+https://www.philipphoffmann.de/2017/08/23/git-gpg-github-gitlab-macos/
 
 ### Git-free install
 
