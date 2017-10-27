@@ -54,6 +54,9 @@ set tabstop=4
 set hlsearch
 set incsearch
 
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
+set list
+
 " indent
 autocmd FileReadPre * :DetectIndent
 let g:detectindent_preferred_expandtab = 1
