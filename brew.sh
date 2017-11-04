@@ -49,7 +49,7 @@ pip3 install neovim
 brew cask install ngrok
 brew cask install android-file-transfer
 brew cask install insomnia
-brew cask install translatiumapp
+brew cask install kap
 
 # Install font tools.
 brew tap bramstein/webfonttools
