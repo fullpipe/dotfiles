@@ -19,14 +19,24 @@ ino <right> <Nop>
   call dein#add('Shougo/dein.vim')
   call dein#add('haya14busa/dein-command.vim')
 
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
   " theme
   call dein#add('joshdick/onedark.vim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('vim-airline/vim-airline')
 
   " syntax
-  call dein#add('HerringtonDarkholme/yats.vim')
   call dein#add('tpope/vim-markdown', {'on_ft': 'markdown'})
+
+  " Typescript
+  call dein#add('mhartington/nvim-typescript')
+  call dein#add('HerringtonDarkholme/yats.vim')
 
   call dein#add('ciaranm/detectindent')
   "call dein#add('tpope/vim-sleuth')
