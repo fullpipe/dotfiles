@@ -1,0 +1,51 @@
+"*":
+  "activate-power-mode":
+    plugins:
+      playAudio: true
+      screenShake: true
+  "atom-ide-ui":
+    use:
+      "atom-ide-code-format": false
+      "atom-ide-code-highlight": false
+      "atom-ide-datatip": false
+      "atom-ide-outline-view": false
+      "atom-ide-signature-help": false
+  core:
+    disabledPackages: [
+      "cucumber"
+      "atom-autocomplete-php"
+      "linter"
+    ]
+    telemetryConsent: "no"
+  editor:
+    fontSize: 17
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "ed76c550-bec0-47a7-9681-03451d887cf5"
+  fonts: {}
+  linter:
+    lintOnChange: false
+  "linter-ui-default":
+    showPanel: true
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "php-cs-fixer":
+    executablePath: "/usr/local/bin/php-cs-fixer"
+    pathMode: "intersection"
+    showInfoNotifications: true
+  "php-debug":
+    ServerPort: 9090
+    currentPanelMode: "bottom"
+  "remote-sync":
+    autoHideLogPanel: true
+    foldLogPanel: true
+  "tree-view": {}
+  welcome:
+    showOnStartup: false

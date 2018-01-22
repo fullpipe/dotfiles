@@ -104,6 +104,8 @@ brew install octave
 
 # Cask
 brew cask install atom
+apm stars --install
+
 brew cask install telegram
 brew cask install whatsapp
 brew cask install iterm2

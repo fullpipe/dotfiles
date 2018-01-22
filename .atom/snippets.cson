@@ -1,0 +1,4 @@
+'.source.php':
+  'var dump and exit':
+    'prefix': 'vde'
+    'body': 'var_dump(${1:"var"});\nexit;$2'
