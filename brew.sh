@@ -119,7 +119,8 @@ brew cask install sequel-pro
 brew cask install imageoptim
 brew cask install filezilla
 brew cask install dash
-
+brew cask install alfred
+brew cask install github
 
 brew cask install qlcolorcode
 brew cask install qlstephen
