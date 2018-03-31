@@ -122,6 +122,9 @@ brew cask install dash
 brew cask install alfred
 brew cask install github
 
+brew tap caskroom/fonts
+brew cask install font-source-code-pro
+
 brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install qlmarkdown
