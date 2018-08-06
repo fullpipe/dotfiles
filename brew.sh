@@ -94,7 +94,11 @@ brew install vbindiff
 brew install zopfli
 brew install htop
 brew install octave
-
+brew install fzf
+brew install highlight
+brew install ed
+brew install the_silver_searcher
+brew install ctags
 # Cask
 brew cask install atom
 apm stars --install

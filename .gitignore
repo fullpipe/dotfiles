@@ -17,6 +17,7 @@ Thumbs.db
 
 .config/**
 !.config/nvim/init.vim
+!.config/alacritty/alacritty.yml
 
 # Editors
 *.sublime-project
