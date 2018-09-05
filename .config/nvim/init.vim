@@ -57,6 +57,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
+  call dein#add('fatih/vim-go', {'on_ft': 'go'})
+
   if dein#check_install()
     call dein#install()
     let pluginsExist=1
@@ -76,6 +78,8 @@ set wildmenu
 
 set expandtab
 set tabstop=4
+set shiftwidth=4
+set smartindent
 
 set hlsearch
 set incsearch
