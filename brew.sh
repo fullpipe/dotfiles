@@ -42,6 +42,7 @@ brew install neovim
 brew install grep
 brew install openssh
 brew install screen
+brew install watch
 brew install homebrew/php/php71
 brew install homebrew/php/php-cs-fixer
 brew install python3
