@@ -1,0 +1,19 @@
+{
+    "name": "fp/composer",
+    "require": {
+        "hirak/prestissimo": "^0.3.8",
+        "phpactor/phpactor": "^0.11.0",
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpmd/phpmd": "^2.6",
+        "phpstan/phpstan": "^0.10.6",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "authors": [
+        {
+            "name": "Eugene Bravov",
+            "email": "eugene.bravov@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
