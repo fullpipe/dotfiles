@@ -1,6 +1,7 @@
 # Compiled Python files
 *.pyc
 *.php~
+.php_cs.cache
 
 # Folder view configuration files
 .DS_Store
@@ -22,3 +23,7 @@ Thumbs.db
 # Editors
 *.sublime-project
 *.sublime-workspace
+.octave_hist
+.php_history
+.python_history
+.viminfo

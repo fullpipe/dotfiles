@@ -2,6 +2,7 @@
 
 # Make vim the default editor.
 export EDITOR='nvim';
+export MYVIMRC='~/.config/nvim/init.vim';
 
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
@@ -35,3 +36,7 @@ export GPG_TTY=$(tty);
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+export GOPATH=$HOME/go
+
+export COMPOSER_HOME=~/.config/composer
+

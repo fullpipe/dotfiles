@@ -115,7 +115,7 @@ brew cask install gitter
 # Devtools
 brew cask install sourcetree
 brew cask install slack
-
+brew install entr
 brew install composer
 brew install gpg2
 brew install npm
@@ -138,6 +138,7 @@ brew cask install quicklook-csv
 brew cask install betterzipql
 brew cask install qlimagesize
 brew cask install webpquicklook
+brew cask install mpv
 
 # Remove outdated versions from the cellar.
 brew cleanup
