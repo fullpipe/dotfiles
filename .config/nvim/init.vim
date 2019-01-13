@@ -201,13 +201,12 @@ let g:ale_fixers = {
   \}
 let g:ale_linters = {
 \   'php': ['phpstan'],
-\ 'typescript': ['tslint'],
+\   'typescript': ['tslint'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_enabled = 1
 
 colorscheme onedark
-"colorscheme xoria256
 
 set textwidth=80
 set colorcolumn=+1

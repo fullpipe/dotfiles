@@ -51,6 +51,7 @@ brew cask install insomnia
 brew cask install kap
 brew install php
 brew install gmp
+brew install go
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 # brew install aircrack-ng
@@ -103,6 +104,7 @@ brew install ed
 brew install the_silver_searcher
 brew install ctags
 # Cask
+brew cask install alacritty
 brew cask install atom
 apm stars --install
 
@@ -121,6 +123,10 @@ brew install entr
 brew install composer
 brew install gpg2
 brew install npm
+
+brew install tmux
+# alwais install https://github.com/tmux-plugins/tpm
+
 brew cask install docker
 brew cask install sequel-pro
 brew cask install imageoptim
