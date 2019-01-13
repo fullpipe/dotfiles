@@ -46,9 +46,6 @@ brew install openssh
 brew install screen
 brew install watch
 brew install python3
-brew cask install ngrok
-brew cask install insomnia
-brew cask install kap
 brew install php
 brew install gmp
 brew install go
@@ -103,6 +100,13 @@ brew install highlight
 brew install ed
 brew install the_silver_searcher
 brew install ctags
+brew install entr
+brew install composer
+brew install gpg2
+brew install npm
+brew install tmux
+# alwais install https://github.com/tmux-plugins/tpm
+
 # Cask
 brew cask install alacritty
 brew cask install atom
@@ -119,13 +123,9 @@ brew cask install gitter
 # Devtools
 brew cask install sourcetree
 brew cask install slack
-brew install entr
-brew install composer
-brew install gpg2
-brew install npm
-
-brew install tmux
-# alwais install https://github.com/tmux-plugins/tpm
+brew cask install ngrok
+brew cask install insomnia
+brew cask install kap
 
 brew cask install docker
 brew cask install sequel-pro
@@ -147,6 +147,7 @@ brew cask install betterzipql
 brew cask install qlimagesize
 brew cask install webpquicklook
 brew cask install mpv
+brew cask install min
 
 # Remove outdated versions from the cellar.
 brew cleanup
