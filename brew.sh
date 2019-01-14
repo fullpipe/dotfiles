@@ -49,6 +49,7 @@ brew install python3
 brew install php
 brew install gmp
 brew install go
+brew install dep
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 # brew install aircrack-ng
