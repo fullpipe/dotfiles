@@ -113,12 +113,15 @@ brew cask install alacritty
 brew cask install atom
 apm stars --install
 
+brew cask install sublime-text
+
 brew cask install telegram
 brew cask install whatsapp
 brew cask install iterm2
 brew cask install Transmission
 brew cask install spectacle
 brew cask install skype
+brew cask install notable
 brew cask install gitter
 
 # Devtools
