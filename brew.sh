@@ -24,7 +24,7 @@ brew install findutils
 brew install gnu-sed --with-default-names
 # Install Bash 4.
 brew install bash
-brew install bash-completion2
+brew install bash-completion
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -105,8 +105,12 @@ brew install entr
 brew install composer
 brew install gpg2
 brew install npm
+
 brew install tmux
 # alwais install https://github.com/tmux-plugins/tpm
+
+brew install syncthing
+brew services start syncthing
 
 # Cask
 brew cask install alacritty
@@ -122,14 +126,18 @@ brew cask install Transmission
 brew cask install spectacle
 brew cask install skype
 brew cask install notable
+brew cask install fromscratch
 brew cask install gitter
+
 
 # Devtools
 brew cask install sourcetree
 brew cask install slack
 brew cask install ngrok
 brew cask install insomnia
+brew cask install postman
 brew cask install kap
+brew cask install bloomrpc
 
 brew cask install docker
 brew cask install sequel-pro
