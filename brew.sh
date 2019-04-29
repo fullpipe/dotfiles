@@ -100,7 +100,9 @@ brew install fzf
 brew install highlight
 brew install ed
 brew install the_silver_searcher
-brew install ctags
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+# brew install ctags
 brew install entr
 brew install composer
 brew install gpg2
@@ -128,7 +130,7 @@ brew cask install skype
 brew cask install notable
 brew cask install fromscratch
 brew cask install gitter
-
+brew cask install mysqlworkbench
 
 # Devtools
 brew cask install sourcetree

@@ -30,13 +30,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
     Plug 'ncm2/ncm2-ultisnips'
     Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    "Plug 'honza/vim-snippets'
+    Plug 'ludovicchabant/vim-gutentags'
 
 	Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
+    Plug 'vim-scripts/taglist.vim'
 
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'ncm2/ncm2-go'
