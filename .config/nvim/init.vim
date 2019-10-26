@@ -8,50 +8,36 @@ endif
 call plug#begin('~/.config/nvim/plugged')
     " How it looks
     Plug 'joshdick/onedark.vim'
-    Plug 'vim-scripts/xoria256.vim'
-    Plug 'StanAngeloff/php.vim', {'for': 'php'}
-	Plug 'tpope/vim-sensible'
-    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'itchyny/lightline.vim'
+
+    " Hot it feels
     Plug 'sickill/vim-pasta'
+
+    " Syntax
+    Plug 'StanAngeloff/php.vim', {'for': 'php'}
+    Plug 'jparise/vim-graphql'
+    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'lumiliet/vim-twig'
-    Plug 'w0rp/ale'
+    Plug 'stephpy/vim-yaml'
 
-    Plug 'ciaranm/detectindent'
-    Plug 'scrooloose/nerdtree'
-
-    """ Completion
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-tmux'
-    Plug 'ncm2/ncm2-path'
-
-    Plug 'phpactor/phpactor', { 'do': ':call phpactor#Update()', 'for': 'php'}
-    Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
-    Plug 'ncm2/ncm2-ultisnips'
-    Plug 'SirVer/ultisnips'
-    "Plug 'honza/vim-snippets'
-    Plug 'ludovicchabant/vim-gutentags'
-
-	Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-    Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
+    " Fuzzy finder
+    Plug 'airblade/vim-rooter'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'vim-scripts/taglist.vim'
 
+    " Langs
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    Plug 'ncm2/ncm2-go'
-    " LanguageServer client for NeoVim.
-    "Plug 'autozimu/LanguageClient-neovim', {
-    "  \ 'branch': 'next',
-    "  \ 'do': 'bash install.sh',
-    "  \ }
-"    Plug 'ncm2/ncm2-go'
+
+    " Format and code style
+    Plug 'stephpy/vim-php-cs-fixer'
+
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Initialize plugin system
 call plug#end()
 
-let mapleader=","
+
+let mapleader="\<Space>"
+"map <space> <leader>
 
 " disable arrow keys
 noremap <down> <Nop>
@@ -68,9 +54,28 @@ noremap <right> <Nop>
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+
+" Color settings and look
 if (has("termguicolors"))
   set termguicolors
 endif
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
+
+set noshowmode
+
+
+" Open hotkeys
+map <C-p> :Files<CR>
+nmap <leader>; :Buffers<CR>
+
+
 
 set clipboard+=unnamedplus
 set number
@@ -113,11 +118,15 @@ let php_sql_nowdoc=0
 " Nerdtree
 map <C-Bslash> :NERDTreeToggle<CR>
 
+" ctrlspace config
+"let g:CtrlSpaceDefaultMappingKey = "<C-space> "
+"set hidden
+
 """ FZF
 "Hide FZF statusline
 autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+autocmd  FileType fzf set laststatus=0 noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 ruler
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -127,7 +136,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~20%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -147,12 +156,6 @@ let g:fzf_colors =
 
 
 """ Completition
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 " found' messages
@@ -161,13 +164,37 @@ set shortmess+=c
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
 inoremap <c-c> <ESC>
 
-" parameter expansion for selected entry via Enter
-"inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>")
-inoremap <silent> <expr> <CR> (pumvisible() ? ncm2_ultisnips#expand_or("", 'n') : "\<CR>")
+" if hidden is not set, TextEdit might fail.
+set hidden
 
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 """ Snippets
 let g:UltiSnipsExpandTrigger="<C-j>"
@@ -200,10 +227,13 @@ let g:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'php': ['php_cs_fixer', 'phpcbf', 'remove_trailing_lines', 'trim_whitespace'],
   \ 'typescript': ['tslint', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
+  \ 'html': ['prettier']
   \}
 let g:ale_linters = {
 \   'php': ['phpstan'],
-\   'typescript': ['tslint'],
+\   'typescript': ['prettier', 'tslint'],
+\   'javascript': ['prettier', 'eslint'],
+\   'html': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_enabled = 1
@@ -217,8 +247,18 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitelines_at_eof=1
 
+" Search files within the project
 noremap <leader>t :FZF<cr>
 
+" Look up for buffers
+noremap <leader>b :Buffers<cr>
+
+" Look up for tags in buffer
+" autocmd FileType go nnoremap <buffer> <leader>r :GoDecls<cr> " not works
+noremap <leader>r :GoDecls<cr>
+autocmd FileType php nnoremap <buffer> <leader>r :BTags<cr>
+
+noremap <leader><space> :b#<cr>
 " tabs
 nnoremap H gT
 nnoremap L gt
