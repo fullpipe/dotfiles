@@ -18,6 +18,7 @@ Thumbs.db
 
 .config/**
 !.config/nvim/init.vim
+!.config/nvim/coc-settings.json
 !.config/alacritty/alacritty.yml
 !.config/composer/composer.json
 
