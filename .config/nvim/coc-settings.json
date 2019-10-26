@@ -1,0 +1,15 @@
+{
+
+     "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    },
+    "phplang": {
+      "command": "php",
+      "args": ["$HOME/.config/composer/vendor/felixfbecker/language-server/bin/php-language-server.php"],
+      "filetypes": ["php"]
+    }
+  }
+}
