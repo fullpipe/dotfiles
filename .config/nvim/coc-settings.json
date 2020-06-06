@@ -1,13 +1,16 @@
 {
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".git/"],
-      "filetypes": ["go"]
-    },    
-    "phplang": {
+        "golang": {
+              "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"],
+            "initializationOptions": {
+              "usePlaceholders": true
+            }
+  },
+"phplang": {
       "command": "php",
-      "args": ["$HOME/.config/composer/vendor/felixfbecker/language-server/bin/php-language-server.php"],
+      "args": ["/Users/fullpipe/.config/composer/vendor/felixfbecker/language-server/bin/php-language-server.php"],
       "rootPatterns": ["composer.json", ".git/"],
       "filetypes": ["php"]
     }

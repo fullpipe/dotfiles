@@ -5,7 +5,7 @@
         "phpactor/phpactor": "*",
         "friendsofphp/php-cs-fixer": "^2.13",
         "phpmd/phpmd": "^2.6",
-        "phpstan/phpstan": "^0.10.6",
+        "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
         "jetbrains/phpstorm-stubs": "dev-master",
         "felixfbecker/language-server": "^5.4"
