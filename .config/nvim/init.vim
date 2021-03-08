@@ -6,11 +6,19 @@ endif
 
 " Install some plugins
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     " How it looks
     Plug 'joshdick/onedark.vim'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'itchyny/lightline.vim'
     Plug 'junegunn/goyo.vim'
-    Plug 'machakann/vim-highlightedyank'
+    "Plug 'machakann/vim-highlightedyank'
     Plug 'andymass/vim-matchup'
 
     " How it feels
@@ -20,6 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'justinmk/vim-sneak'
     Plug 'arp242/auto_mkdir2.vim'
     Plug 'MattesGroeger/vim-bookmarks'
+    "Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Syntax
     Plug 'StanAngeloff/php.vim', {'for': 'php'}
@@ -41,47 +50,88 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'buoto/gotests-vim'
 
-    " Format and code style
-    Plug 'stephpy/vim-php-cs-fixer'
-
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Initialize plugin system
 call plug#end()
 
 
-let mapleader="\<Space>"
-"map <space> <leader>
 
-" disable arrow keys
-noremap <down> <Nop>
-noremap <up> <Nop>
-noremap <left> <Nop>
-noremap <right> <Nop>
+" source vimrc from project root
+set exrc
 
-"ino <down> <Nop>
-"ino <up> <Nop>
-"ino <left> <Nop>
-"ino <right> <Nop>
+" better cursor
+"set guicursor=
+
+set relativenumber
+set number
+
+set hidden
+set noerrorbells
+
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+set nohlsearch
+set incsearch
+
+set textwidth=0
+set formatoptions-=t
+set nowrap
+
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+
+" more space for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=100
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+set scrolloff=8
+
+set colorcolumn=+1
+
+set termguicolors
+set noshowmode
+set completeopt=menuone,noinsert,noselect
+set clipboard+=unnamedplus
+
+
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
+set list
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
+colorscheme onedark
+"colorscheme gruvbox
+
+let mapleader=" "
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = false
+  },
+}
+EOF
 
 " setup python env
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-
-" Color settings and look
-if (has("termguicolors"))
-  set termguicolors
-endif
-
-if !has('gui_running')
-  set t_Co=256
-endif
-
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
-
-set noshowmode
+let g:lightline = { 'colorscheme': 'one' }
 
 
 " Open hotkeys
@@ -95,33 +145,11 @@ nmap <leader>; :Buffers<CR>
 " Quick save
 nnoremap <leader>w :w<cr>
 
-set clipboard+=unnamedplus
-set number
-
-" Indention, space vs tab
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smartindent
-
-" stop linebreaking, but keep wraping
-set tw=0
-
-set hlsearch
-
-set nobackup
-set noswapfile
-
 " try to detect indention on file open
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 autocmd FileReadPre * :DetectIndent
 
-"add some space when scrolling
-set scrolloff=3
-
-set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
-set list
 
 " fix php performance issue
 let php_html_load=0
@@ -146,7 +174,7 @@ let g:fzf_action = {
 
 " Default fzf layout
 " - down / up / left / right
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'down': '~40%' }
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -168,25 +196,6 @@ let g:fzf_colors =
 
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
 inoremap <c-c> <ESC>
-
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" Better display for messages
-set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -305,13 +314,6 @@ let b:neoformat_basic_format_retab = 0
 
 
 """ Editor config
-
-colorscheme onedark
-
-set textwidth=80
-set colorcolumn=+1
-set relativenumber
-
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 let g:strip_whitelines_at_eof=1
@@ -337,9 +339,6 @@ nnoremap <leader><leader> <c-^>
 nnoremap H gT
 nnoremap L gt
 
-" Open new split panes to right and bottom
-set splitbelow
-set splitright
 
 let g:sneak#s_next = 1
 let g:sneak#use_ic_scs = 1
@@ -371,3 +370,6 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+
+lua require('symbols')
